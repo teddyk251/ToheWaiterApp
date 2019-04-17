@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:WaiterApp1"
+             x:Class="WaiterApp.MainPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="IP"
+                     Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <StackLayout VerticalOptions="Center"
+                 Margin="20,0,20,0">
+        <Entry x:Name= "userNameEntry"
+               Placeholder="Waiter's Name"/>
+        <Entry x:Name="passwordEntry"
+               Placeholder="Password"
+               IsPassword="True"/>
+        <Button x:Name="LoginButton"
+                Margin="0,25,0,0"
+                Text="Login"
+                Clicked="LoginButton_Clicked"
+                BackgroundColor="#1E90FF"/>
+    </StackLayout>
+
+</ContentPage>
