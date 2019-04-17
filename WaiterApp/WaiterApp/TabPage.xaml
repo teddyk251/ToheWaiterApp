@@ -10,7 +10,4 @@
     <local:DrinksPage Title="Drinks"/>
     <local:MainDishPage Title="Main Dish"/>
     
-
-
-
 </TabbedPage>
