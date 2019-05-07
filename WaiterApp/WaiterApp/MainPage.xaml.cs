@@ -21,7 +21,7 @@ namespace WaiterApp
 
             if (isEmailEmpty || isPasswordEmpty)
             {
-
+                DisplayAlert("Error","Invalid Username or Password","OK");
             }
             else
             {

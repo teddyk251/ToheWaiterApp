@@ -20,7 +20,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="Table01" Text="Table 01" Grid.Row="0" Grid.Column="0" Image="tableicon.png" Clicked="Table01_Clicked" ContentLayout="Top,10"/>
+                <Button x:Name="Table01" Text="Table 01" Grid.Row="0" Grid.Column="0" Image="icons8_restaurant.png" Clicked="Table01_Clicked" ContentLayout="Top,10"/>
                 <Button x:Name="Table02" Text="Table 02" Grid.Row="0" Grid.Column="1" Clicked="Table02_Clicked" ContentLayout="Top,10"/>
                 <Button x:Name="Table03" Text="Table 03" Grid.Row="0" Grid.Column="2" Clicked="Table03_Clicked" ContentLayout="Top,10"/>
                 <Button x:Name="Table04" Text="Table 04" Grid.Row="1" Grid.Column="0" Clicked="Table04_Clicked" />
