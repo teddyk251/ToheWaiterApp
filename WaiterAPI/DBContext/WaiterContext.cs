@@ -53,8 +53,9 @@ namespace WaiterAPI.DBContext
                 new Item
                 {
                     ItemID=1,
-                    ItemName="Buger",
-                    ItemPrice=120
+                    ItemName="Coca Cola",
+                    ItemPrice=12,
+                    CategoryID=2
                 }
                 );
         }

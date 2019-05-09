@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using WaiterAPI.Models;
 namespace WaiterAPI.Repository
 {
-    interface ISelectCategory
+    public interface ISelectCategory
     {
+        List<Item> selectCatagory(int catID);
     }
 }
