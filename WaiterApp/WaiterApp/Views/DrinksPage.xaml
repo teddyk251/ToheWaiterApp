@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WaiterApp.DrinksPage" xmlns:ViewModels="clr-namespace:WaiterApp.ViewModels;assembly=WaiterApp">
+
+    <ContentPage.BindingContext>
+        <ViewModels:DrinksViewModel/>
+    </ContentPage.BindingContext>
+
+    <ListView ItemsSource="{Binding DrinksList}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="{Binding ImgUrl}"/>
+                        <StackLayout HorizontalOptions="StartAndExpand">
+                            <Label Text="{Binding Name} " FontSize="20"/>
+                        </StackLayout>
+                        <Button Text=">" Clicked="Button_Clicked"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+    </ListView>
+    
+
+</ContentPage>

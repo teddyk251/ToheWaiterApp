@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WaiterApp.TableSelectPage" xmlns:ViewModels="clr-namespace:WaiterApp.ViewModels;assembly=WaiterApp">
+
+    <ContentPage.BindingContext>
+        <ViewModels:TableViewModel />
+    </ContentPage.BindingContext>
+
+    <ListView ItemsSource="{Binding TablesList}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ScrollView>
+                        <Grid Padding="20">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="141" />
+                                <RowDefinition Height="141" />
+                                <RowDefinition Height="141" />
+                                <RowDefinition Height="141" />
+                                <RowDefinition Height="141" />
+                                <RowDefinition Height="141" />
+                                <RowDefinition Height="141" />
+                            </Grid.RowDefinitions>
+                            
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name="{Binding Table_Number}" Text="{Binding Table_Number}" Grid.Row="0" Grid.Column="0" Image="icons8_restaurant.png" Clicked="Table01_Clicked" ContentLayout="Top,10"/>
+                        </Grid>
+                    </ScrollView>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    
+</ContentPage>
