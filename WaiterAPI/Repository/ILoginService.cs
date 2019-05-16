@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using WaiterAPI.Models;
 namespace WaiterAPI.Repository
 {
     public interface ILoginService
     {
-        bool login(string usrname, string pword);
+        Task<User> Login(string usrname, string pword);
     }
 }

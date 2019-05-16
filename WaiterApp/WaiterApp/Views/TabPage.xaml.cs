@@ -17,6 +17,8 @@ namespace WaiterApp
 			InitializeComponent ();
 		}
 
+        public string catagori_name { get; internal set; }
+
         private void Refresh_Clicked(object sender, EventArgs e)
         {
 

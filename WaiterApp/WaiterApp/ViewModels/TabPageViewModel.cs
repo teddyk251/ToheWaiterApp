@@ -11,9 +11,9 @@ namespace WaiterApp.ViewModels
 
     public class TabPageViewModel : INotifyPropertyChanged
     {
-        private List<Tabpage> _tabpageslist;
+        private List<TabPage> _tabpageslist;
 
-        public List<Tabpage>TabPagesList
+        public List<TabPage>TabPagesList
         {
             get { return _tabpageslist; }
             set

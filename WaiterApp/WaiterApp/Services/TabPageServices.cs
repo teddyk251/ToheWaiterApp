@@ -7,15 +7,15 @@ namespace WaiterApp.Services
 {
     public class TabPageServices
     {
-        public List<Tabpage> GetTabPages()
+        public List<TabPage> GetTabPages()
         {
-            var list = new List<Tabpage>
+            var list = new List<TabPage>
             {
-                new Tabpage
+                new TabPage
                 {
                     catagori_name ="Main Dish"
                 },
-                new Tabpage
+                new TabPage
                 {
                     catagori_name= "Drinks"
                 }

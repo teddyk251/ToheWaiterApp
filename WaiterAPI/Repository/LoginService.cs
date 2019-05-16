@@ -13,17 +13,15 @@ namespace WaiterAPI.Repository
         {
             this.db = db;
         }
-        public bool login(string usrname, string pword)
+        public async Task<User> Login(string usrname, string pword)
         {
-            var usrs = db.Users.Where(x => x.username == usrname &&
-                                           x.password == pword)
-                                           .FirstOrDefault();
+            List<User> u = new List<User>();
+            var usrs = await Task.Run(() => u.SingleOrDefault(x => x.username == usrname && x.password == pword));
+            //db.Users.Where(x => x.username == usrname &&x.password == pword).FirstOrDefault();
             if (usrs == null)
-            {
-                return false;
-            }
+                return null;
 
-            return true;
+            return usrs;
 
         }
     }
