@@ -31,11 +31,11 @@ namespace WaiterAPI.Controllers
 
         // GET: api/Login/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
-r            return "value";
+        public string Get(int id) { 
+        return "value";
         }
 
-        // POST: api/Login
+        // POST: api/Logi
         [AllowAnonymous]
         [HttpPost("authenticate")]
         public async Task<IActionResult> Authenticate([FromBody] User usr)
