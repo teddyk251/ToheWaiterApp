@@ -13,13 +13,13 @@ namespace WaiterAPI.Controllers
     {
         // GET: api/Orders
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<string> GetOrder()
         {
             return new string[] { "value1", "value2" };
         }
 
         // GET: api/Orders/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}", Name = "GetOrder")]
         public string Get(int id)
         {
             return "value";
@@ -27,7 +27,7 @@ namespace WaiterAPI.Controllers
 
         // POST: api/Orders
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void PostOrder([FromBody] string value)
         {
         }
 
@@ -39,7 +39,7 @@ namespace WaiterAPI.Controllers
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void DeleteOrder(int id)
         {
         }
     }

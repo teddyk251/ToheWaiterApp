@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using WaiterAPI.Repository;
 using WaiterAPI.Models;
 using Microsoft.AspNetCore.Authorization;
-
+using WaiterAPI.DBContext;
 namespace WaiterAPI.Controllers
 {
     [Route("api/[controller]")]
@@ -15,10 +15,10 @@ namespace WaiterAPI.Controllers
     public class LoginController : ControllerBase
     {
         private ILoginService _loginService;
-
-        public LoginController(ILoginService loginService)
+        public WaiterContext db;
+        public LoginController()
         {
-            _loginService = loginService;
+            _loginService = new LoginService(db);
         }
 
 

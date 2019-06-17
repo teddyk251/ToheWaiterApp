@@ -27,7 +27,7 @@ namespace WaiterAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContext<WaiterContext>(x => x.UseSqlServer(Configuration.GetConnectionString("WaiterDB")));
+            services.AddDbContext<WaiterContext>(x => x.UseSqlServer(Configuration.GetConnectionString("AndroidWaiterDB")));
 
         }
 

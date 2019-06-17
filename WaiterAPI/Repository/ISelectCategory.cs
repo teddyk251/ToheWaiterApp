@@ -7,6 +7,6 @@ namespace WaiterAPI.Repository
 {
     public interface ISelectCategory
     {
-        List<Item> selectCatagory(int catID);
+        List<Element> selectCatagory(string catID);
     }
 }

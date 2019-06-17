@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WaiterAPI.DBContext;
 
 namespace WaiterAPI.Migrations
 {
     [DbContext(typeof(WaiterContext))]
-    partial class WaiterContextModelSnapshot : ModelSnapshot
+    [Migration("20190601004428_FinalMigrate")]
+    partial class FinalMigrate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -90,9 +92,9 @@ namespace WaiterAPI.Migrations
 
                     b.Property<decimal>("Cost");
 
-                    b.Property<string>("ElementCode");
+                    b.Property<string>("Element");
 
-                    b.Property<int>("Quantity");
+                    b.Property<string>("Quantity");
 
                     b.Property<string>("Remark");
 
@@ -104,15 +106,9 @@ namespace WaiterAPI.Migrations
 
                     b.Property<string>("UnitAmount");
 
-                    b.Property<string>("VEcode");
-
                     b.Property<string>("VoucherCode");
 
                     b.HasKey("Code");
-
-                    b.HasIndex("ElementCode");
-
-                    b.HasIndex("VEcode");
 
                     b.HasIndex("VoucherCode");
 
@@ -126,7 +122,7 @@ namespace WaiterAPI.Migrations
 
                     b.Property<string>("Active");
 
-                    b.Property<DateTime?>("DateOFBirth");
+                    b.Property<DateTime>("DateOFBirth");
 
                     b.Property<string>("FirstName");
 
@@ -149,6 +145,10 @@ namespace WaiterAPI.Migrations
                     b.HasKey("PersonCode");
 
                     b.ToTable("Persons");
+
+                    b.HasData(
+                        new { PersonCode = "pe01", Active = "true", DateOFBirth = new DateTime(2019, 6, 1, 0, 0, 0, 0, DateTimeKind.Local), FirstName = "hannha", Gender = "Female", Group = "waitress", LastName = " ", MiddleName = "M", Nationality = "Etgiopian", Remark = "new", Title = "Ms.", Type = " " }
+                    );
                 });
 
             modelBuilder.Entity("WaiterAPI.Models.PhysicalTable", b =>
@@ -173,7 +173,7 @@ namespace WaiterAPI.Migrations
 
             modelBuilder.Entity("WaiterAPI.Models.price", b =>
                 {
-                    b.Property<string>("PriceCode")
+                    b.Property<string>("Code")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Currency");
@@ -190,7 +190,7 @@ namespace WaiterAPI.Migrations
 
                     b.Property<int>("priority");
 
-                    b.HasKey("PriceCode");
+                    b.HasKey("Code");
 
                     b.HasIndex("ElementCode");
 
@@ -217,6 +217,10 @@ namespace WaiterAPI.Migrations
                     b.HasIndex("PersonCode");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new { Code = "us01", IsActive = true, loggedInStatus = 0, password = "h123", username = "hab" }
+                    );
                 });
 
             modelBuilder.Entity("WaiterAPI.Models.Voucher", b =>
@@ -247,7 +251,7 @@ namespace WaiterAPI.Migrations
 
             modelBuilder.Entity("WaiterAPI.Models.VoucherExtensionRestaurant", b =>
                 {
-                    b.Property<string>("VECode")
+                    b.Property<string>("Code")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("PhysicalTableCode");
@@ -258,7 +262,7 @@ namespace WaiterAPI.Migrations
 
                     b.Property<string>("waiter");
 
-                    b.HasKey("VECode");
+                    b.HasKey("Code");
 
                     b.HasIndex("VoucherCode");
 
@@ -281,14 +285,6 @@ namespace WaiterAPI.Migrations
 
             modelBuilder.Entity("WaiterAPI.Models.LineItem", b =>
                 {
-                    b.HasOne("WaiterAPI.Models.Element", "element")
-                        .WithMany()
-                        .HasForeignKey("ElementCode");
-
-                    b.HasOne("WaiterAPI.Models.VoucherExtensionRestaurant", "VoucherExtension")
-                        .WithMany()
-                        .HasForeignKey("VEcode");
-
                     b.HasOne("WaiterAPI.Models.Voucher", "voucher")
                         .WithMany()
                         .HasForeignKey("VoucherCode");

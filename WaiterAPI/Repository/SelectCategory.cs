@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WaiterAPI.Models;
 using WaiterAPI.DBContext;
-
+using System.Text;
 namespace WaiterAPI.Repository
 {
     public class SelectCategory : ISelectCategory
@@ -15,11 +15,11 @@ namespace WaiterAPI.Repository
             this.db = db;
         }
 
-        public List<Item> selectCatagory(int catID)
+        public List<Element> selectCatagory(string catID)
         {
-            List<Item> items = new List<Item>();
-            items = db.Items.Where(u => u.CategoryID == catID).ToList();
-
+            List<Element> items = new List<Element>();
+            items = db.Elements.Where(u => u.GroupCode.Equals(catID)).ToList();
+            
             return items;
         }
     }

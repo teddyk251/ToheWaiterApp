@@ -17,7 +17,7 @@ namespace WaiterAPI.Repository
         {
             List<User> u = new List<User>();
             var usrs = await Task.Run(() => u.SingleOrDefault(x => x.username == usrname && x.password == pword));
-            //db.Users.Where(x => x.username == usrname &&x.password == pword).FirstOrDefault();
+            db.Users.Where(x => x.username == usrname &&x.password == pword).FirstOrDefault();
             if (usrs == null)
                 return null;
 
